@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Acme-SubstituteSubs
-version:            0.01
+version:            0.02
 abstract:           Replace subroutines at run-time
 author:
     - Scott Walters <knoppix@lightandslowass.net>

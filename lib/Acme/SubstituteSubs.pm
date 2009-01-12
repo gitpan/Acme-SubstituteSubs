@@ -4,7 +4,7 @@ use 5.008000;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 
@@ -12,15 +12,17 @@ Acme::SubstituteSubs - Replace subroutines at run-time
 
 =head1 SYNOPSIS
 
-  use Acme::SubstituteSubs;
+    use Acme::SubstituteSubs;
 
-  sub say_hi { print "hi!\n"; }
+    sub say_hi { print "hihihihi!\n"; }
 
-  my $say_hi = Acme::SubstituteSubs->get('main::say_hi');
-  $say_hi =~ s/hi/hihi/;
-  Acme::SubstituteSubs->set('main::say_hi', $say_hi);
+    my $say_hi = Acme::SubstituteSubs->get('main::say_hi') or die;
+    $say_hi =~ s/"hi/"hihi/;
+    Acme::SubstituteSubs->set('main::say_hi', $say_hi) or die;
+    say_hi();
 
-  exec $0;
+    exec 'perl', $0;
+
 
 =head1 DESCRIPTION
 
@@ -77,6 +79,10 @@ Lists packages defined in the source script.
 =head1 HISTORY
 
 =over 8
+
+=item 0.02
+
+Fixed the example.
 
 =item 0.01
 
